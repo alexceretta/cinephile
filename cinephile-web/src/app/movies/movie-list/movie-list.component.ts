@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
+import { ConfigurationService } from 'src/app/configuration/configuration-service';
 
 @Component({
   selector: 'app-movie-list',
@@ -10,11 +11,13 @@ import { MovieService } from '../movie.service';
 export class MovieListComponent implements OnInit {
 
   movies: Movie[] = [];
+  imagesUrl: string;
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService, private configurationService: ConfigurationService) { }
 
   ngOnInit() {
     this.getUpcomingMovies();
+    this.imagesUrl = this.configurationService.ApiConfiguration.images.base_url;
   }
 
   getUpcomingMovies(): void {

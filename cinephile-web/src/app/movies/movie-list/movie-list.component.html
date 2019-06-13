@@ -1,5 +1,10 @@
 <mat-grid-list cols="2" rowHeight="2:1">
 	<mat-grid-tile *ngFor="let movie of movies">
-		{{movie.title}}
+		<mat-card>
+			<mat-card-content>
+				{{movie.title}}
+				<img src="{{imagesUrl}}/w185/{{movie.poster_path}}" alt="poster" />
+			</mat-card-content>
+		</mat-card>		
 	</mat-grid-tile>
 </mat-grid-list>
