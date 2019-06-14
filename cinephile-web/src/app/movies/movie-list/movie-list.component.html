@@ -1,10 +1,17 @@
-<mat-grid-list cols="2" rowHeight="2:1">
+<mat-grid-list cols="2" rowHeight="2:1" class="movie-grid">
 	<mat-grid-tile *ngFor="let movie of movies">
-		<mat-card>
-			<mat-card-content>
-				{{movie.title}}
-				<img src="{{imagesUrl}}/w185/{{movie.poster_path}}" alt="poster" />
-			</mat-card-content>
-		</mat-card>		
+		<div class="movie-container">
+			<div class="movie-poster">
+				<img src="{{imagesUrl}}w185{{movie.poster_path}}" alt="poster" />
+			</div>
+			<div class="movie-details">
+				<div class="movie-title">
+					<h3>{{movie.title}}</h3>
+					<span>Release Date: {{movie.release_date}}</span>
+				</div>
+				<hr>
+				<p>{{movie.overview}}</p>
+			</div>
+		</div>
 	</mat-grid-tile>
 </mat-grid-list>
