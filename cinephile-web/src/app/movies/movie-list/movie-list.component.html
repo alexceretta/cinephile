@@ -1,4 +1,5 @@
-<mat-grid-list cols="2" rowHeight="2:1" class="movie-grid">
+<mat-grid-list cols="2" rowHeight="2:1" class="movie-grid" infiniteScroll [infiniteScrollDistance]="2"
+	[infiniteScrollThrottle]="150" [scrollWindow]="true" (scrolled)="onScroll()">
 	<mat-grid-tile *ngFor="let movie of movies">
 		<div class="movie-container">
 			<div class="movie-poster">

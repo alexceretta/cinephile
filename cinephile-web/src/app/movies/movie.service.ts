@@ -17,7 +17,7 @@ export class MovieService {
 
     constructor(private http: HttpClient) { }
 
-    getUpcoming (): Observable<SearchResult<MovieSearch>> {
-        return this.http.get<SearchResult<MovieSearch>>(`${this.moviesUrl}/upcoming`);
+    getUpcoming(page: number): Observable<SearchResult<MovieSearch>> {
+        return this.http.get<SearchResult<MovieSearch>>(`${this.moviesUrl}/upcoming?page=${page}`);
     }
 }
