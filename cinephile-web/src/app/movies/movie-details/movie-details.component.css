@@ -1,0 +1,47 @@
+.details-container {
+    display: flex;
+    background-color: #673ab7;
+}
+
+.movie-header {
+    color: white;
+}
+
+.movie-header small {
+    color: whitesmoke;
+}
+
+.movie-header p {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.movie-header h3 {
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.movie-poster {
+    padding: 20px;
+}
+
+.movie-cast {
+    display: flex;
+}
+
+.cast-details {
+    margin-right: 20px;
+}
+
+.cast-name {
+    font-weight: bold;
+}
+
+.cast-character {
+    font-size: 14px;
+}
+
+/* .movie-details-score {
+    display: flex;
+} */

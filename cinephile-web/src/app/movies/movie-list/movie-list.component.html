@@ -11,8 +11,12 @@
 					<span>Release Date: {{movie.release_date}}</span>
 				</div>
 				<hr>
-				<p>{{movie.overview}}</p>
+				<p>{{movie.overview}}</p>								
+			</div>			
+			<div class="movie-link">					
+				<mat-icon>play_circle_filled</mat-icon>
+				<a [routerLink]="[ '/movies', movie.id ]">See More Details</a>
 			</div>
-		</div>
+		</div>		
 	</mat-grid-tile>
 </mat-grid-list>

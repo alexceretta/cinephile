@@ -1,0 +1,20 @@
+<mat-toolbar>
+	<form class="search-form">
+		<div class="search-input">
+			<mat-form-field floatLabel="never">
+				<input type="text" placeholder="Search for Movies" class="search-input" matInput
+					[formControl]="searchTerm" [matAutocomplete]="auto">
+				<mat-icon matPrefix>search</mat-icon>
+			</mat-form-field>
+		</div>
+
+		<mat-autocomplete #auto="matAutocomplete" [displayWith]="displaySelection"
+			(optionSelected)="itemSelected($event)">
+			<mat-option *ngFor="let movie of searchResult" [value]="movie">
+				<a [routerLink]="[ '/movies', movie.id ]">
+					{{movie.title}} ({{movie.release_date | date: 'yyyy' }})
+				</a>
+			</mat-option>
+		</mat-autocomplete>
+	</form>
+</mat-toolbar>

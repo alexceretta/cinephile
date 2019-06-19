@@ -33,6 +33,7 @@ public class MovieService : IMovieService
             .AppendPathSegments("movie", id)
             .SetQueryParams(new {
                 api_key = this.apiSettings.ApiKey,
+                append_to_response = "credits"
             });
 
         var response = await this.httpClient.GetAsync(url);
