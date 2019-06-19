@@ -29,4 +29,8 @@ export class MovieDetailsComponent implements OnInit {
       .subscribe(movie => this.movie = movie);
   }
 
+  getMovieBackdrop(): string {
+    return this.imagesUrl + 'original' + this.movie.backdrop_path;
+  }
+
 }

@@ -1,4 +1,4 @@
-<div class="details-container" *ngIf="movie">
+<div class="details-container" *ngIf="movie" [ngStyle]="{'background-image': 'url(' + getMovieBackdrop() + ')'}">
   <div class="movie-poster">
     <img src="{{imagesUrl}}w300{{movie.poster_path}}" alt="poster" />
   </div>
