@@ -48,7 +48,8 @@ public class MovieService : IMovieService
             .AppendPathSegments("search", "movie")
             .SetQueryParams(new {
                 api_key = this.apiSettings.ApiKey,
-                query = query
+                query = query,
+                page = page
             });
 
         var response = await this.httpClient.GetAsync(url);

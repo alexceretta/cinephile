@@ -1,0 +1,55 @@
+.movie-container {
+    display: flex;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    width: 520px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.movie-poster {
+    margin-bottom: -4px;
+}
+
+.movie-details {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.movie-details p {
+    overflow: hidden;
+    line-height: 1.2em;
+    height: 6.0em;
+    position: relative;
+    text-align: justify;
+}
+
+.movie-details p:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 1.2em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+}
+
+.movie-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.movie-link > .material-icons {
+    padding-right: 5px;
+}
+
+.movie-link a {
+    text-decoration: none;    
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+}

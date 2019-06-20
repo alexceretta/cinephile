@@ -19,6 +19,7 @@ import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { ConfigurationService } from './configuration/configuration-service';
 import { SearchBarComponent } from './movies/search-bar/search-bar.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
+import { MovieSearchComponent } from './movies/movie-search/movie-search.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
     HeaderComponent,
     MovieListComponent,
     SearchBarComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    MovieSearchComponent
   ],
   imports: [
     BrowserModule,

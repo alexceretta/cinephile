@@ -1,0 +1,27 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+	<div fxFlex="80%" fxFlex.lt-md="100%">
+		<h2>Search Result</h2>
+		<mat-grid-list cols="2" rowHeight="2:1" class="movie-grid" infiniteScroll [infiniteScrollDistance]="2"
+			[infiniteScrollThrottle]="150" [scrollWindow]="true" (scrolled)="onScroll()">
+			<mat-grid-tile *ngFor="let movie of movies">
+				<div class="movie-container">
+					<div class="movie-poster">
+						<img src="{{imagesUrl}}w185{{movie.poster_path}}" alt="poster" />
+					</div>
+					<div class="movie-details">
+						<div class="movie-title">
+							<h3>{{movie.title}}</h3>
+							<span>Release Date: {{movie.release_date | date: 'longDate'}}</span>
+						</div>
+						<hr>
+						<p>{{movie.overview}}</p>
+					</div>
+					<div class="movie-link">
+						<mat-icon>play_circle_filled</mat-icon>
+						<a [routerLink]="[ '/movie', movie.id ]">See More Details</a>
+					</div>
+				</div>
+			</mat-grid-tile>
+		</mat-grid-list>
+	</div>
+</div>

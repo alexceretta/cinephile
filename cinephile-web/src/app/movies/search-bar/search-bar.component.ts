@@ -28,16 +28,14 @@ export class SearchBarComponent implements OnInit {
 		this.searchTerm.valueChanges.pipe(
 			debounceTime(300),
 			tap(() => this.isLoading = true),
-			switchMap(value => this.movieService.search(value, 1)
-				.pipe(
-					finalize(() => this.isLoading = false),
-				)
-			)
+			switchMap((value) => {
+				return value === '' ? [] : this.movieService.search(value, 1)
+					.pipe(finalize(() => this.isLoading = false));
+			})
 		).subscribe(movies => this.searchResult = movies.results);
 	}
 
 	displaySelection(movie: MovieSearch) {
 		if (movie) { return movie.title; }
 	}
-
 }

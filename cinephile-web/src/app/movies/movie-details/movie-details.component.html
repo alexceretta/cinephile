@@ -1,24 +1,29 @@
-<div class="details-container" *ngIf="movie" [ngStyle]="{'background-image': 'url(' + getMovieBackdrop() + ')'}">
-  <div class="movie-poster">
-    <img src="{{imagesUrl}}w300{{movie.poster_path}}" alt="poster" />
-  </div>
-  <div class="movie-header">
-    <h1>{{movie.title}} <small>({{movie.release_date | date: 'yyyy'}})</small></h1>
-    <hr>
-    <h3>Overview:</h3>
-    <p>{{movie.overview}}</p>
-    <div class="movie-details-score">
-      <h3>Details:</h3>
-      <ul>
-        <li>Release Date: {{movie.release_date | date: 'longDate' }}</li>
-        <li>Genre: {{movie.genres[0].name}}</li>
-      </ul>
-    </div>
-    <h3>Cast:</h3>
-    <div class="movie-cast">
-      <div *ngFor="let cast of movie.credits.cast | slice:0:4" class="cast-details">
-        <div class="cast-name">{{cast.name}}</div>
-        <div class="cast-character">{{cast.character}}</div>
+<div fxLayout="row wrap" fxLayoutAlign="center center" class="details-hero" *ngIf="movie">
+  <div class="details-hero-background" [ngStyle]="{'background-image': 'url(' + getMovieBackdrop() + ')'}"></div>
+  <div fxFlex="80%" fxFlex.lt-md="100%">
+    <div class="details-container">
+      <div class="movie-poster">
+        <img src="{{imagesUrl}}w300{{movie.poster_path}}" alt="poster" />
+      </div>
+      <div class="movie-header">
+        <h1>{{movie.title}} <small>({{movie.release_date | date: 'yyyy'}})</small></h1>
+        <hr>
+        <h3>Overview:</h3>
+        <p>{{movie.overview}}</p>
+        <div class="movie-details-score">
+          <h3>Details:</h3>
+          <ul>
+            <li>Release Date: {{movie.release_date | date: 'longDate' }}</li>
+            <li>Genre: {{movie.genres[0].name}}</li>
+          </ul>
+        </div>
+        <h3>Cast:</h3>
+        <div class="movie-cast">
+          <div *ngFor="let cast of movie.credits.cast | slice:0:4" class="cast-details">
+            <div class="cast-name">{{cast.name}}</div>
+            <div class="cast-character">{{cast.character}}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

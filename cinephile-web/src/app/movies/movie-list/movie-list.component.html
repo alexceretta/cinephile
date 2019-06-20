@@ -8,14 +8,14 @@
 			<div class="movie-details">
 				<div class="movie-title">
 					<h3>{{movie.title}}</h3>
-					<span>Release Date: {{movie.release_date}}</span>
+					<span>Release Date: {{movie.release_date | date: 'longDate'}}</span>
 				</div>
 				<hr>
 				<p>{{movie.overview}}</p>								
 			</div>			
 			<div class="movie-link">					
 				<mat-icon>play_circle_filled</mat-icon>
-				<a [routerLink]="[ '/movies', movie.id ]">See More Details</a>
+				<a [routerLink]="[ '/movie', movie.id ]">See More Details</a>
 			</div>
 		</div>		
 	</mat-grid-tile>
